@@ -43,6 +43,13 @@
 #define _CLOCK_T_ long /* clock() */
 #define __machine_clock_t_defined
 
+#include <uk/process_types.h>
+#define _PID_T_DECLARED
+
+#include <uk/user_types.h>
+#define _UID_T_DECLARED
+#define _GID_T_DECLARED
+
 /* Use newlib type definitions */
 #include_next <sys/_types.h>
 
