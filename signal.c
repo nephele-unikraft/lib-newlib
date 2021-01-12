@@ -37,6 +37,14 @@
 #include <errno.h>
 #include <signal.h>
 
+int sigprocmask(int how __unused, const sigset_t *set __unused,
+		sigset_t *oldset __unused)
+{
+	/* TODO: implement. */
+	errno = ENOTSUP;
+	return -1;
+}
+
 int sigaction(int sig __unused, const struct sigaction *restrict act __unused,
 	      struct sigaction *restrict oact __unused)
 {
