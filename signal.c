@@ -37,26 +37,8 @@
 #include <errno.h>
 #include <signal.h>
 
-int sigprocmask(int how __unused, const sigset_t *set __unused,
-		sigset_t *oldset __unused)
-{
-	/* TODO: implement. */
-	errno = ENOTSUP;
-	return -1;
-}
-
-int sigaction(int sig __unused, const struct sigaction *restrict act __unused,
-	      struct sigaction *restrict oact __unused)
-{
-	return 0;
-}
 
 unsigned int alarm(unsigned int seconds __unused)
-{
-	return 0;
-}
-
-int pause(void)
 {
 	return 0;
 }
@@ -64,27 +46,6 @@ int pause(void)
 int siginterrupt(int sig __unused, int flag __unused)
 {
 	return 0;
-}
-
-int sigsuspend(const sigset_t *mask)
-{
-	return 0;
-}
-
-int kill(int pid, int sig __unused)
-{
-	/* TODO check sig */
-	if (pid != UNIKRAFT_PID)
-		errno = ESRCH;
-	return -1;
-}
-
-int killpg(int pgrp, int sig __unused)
-{
-	/* TODO check sig */
-	if (pgrp != UNIKRAFT_PGID)
-		errno = ESRCH;
-	return -1;
 }
 
 int sigaltstack(const stack_t *ss, stack_t *old_ss)

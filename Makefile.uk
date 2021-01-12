@@ -412,13 +412,6 @@ LIBNEWLIBC_SRCS-y += $(LIBNEWLIB_LIBC)/search/qsort_r.c
 LIBNEWLIBC_SRCS-y += $(LIBNEWLIB_LIBC)/search/bsd_qsort_r.c
 
 ################################################################################
-# Newlib/libc code -- signal
-################################################################################
-LIBNEWLIBC_SRCS-y += $(LIBNEWLIB_LIBC)/signal/psignal.c
-LIBNEWLIBC_SRCS-y += $(LIBNEWLIB_LIBC)/signal/raise.c
-LIBNEWLIBC_SRCS-y += $(LIBNEWLIB_LIBC)/signal/signal.c
-
-################################################################################
 # Newlib/libc code -- stdio
 ################################################################################
 LIBNEWLIBC_SRCS-y += $(LIBNEWLIB_LIBC)/stdio/printf.c
@@ -774,7 +767,6 @@ LIBNEWLIBC_SRCS-y += $(LIBNEWLIB_LIBC)/string/strpbrk.c
 LIBNEWLIBC_SRCS-$(CONFIG_ARCH_X86_64) += $(LIBNEWLIB_LIBC)/string/strrchr.c
 LIBNEWLIBC_SRCS-$(CONFIG_ARCH_ARM_64) += $(LIBNEWLIB_LIBC)/machine/aarch64/strrchr.S
 LIBNEWLIBC_SRCS-y += $(LIBNEWLIB_LIBC)/string/strsep.c
-LIBNEWLIBC_SRCS-y += $(LIBNEWLIB_LIBC)/string/strsignal.c
 LIBNEWLIBC_SRCS-y += $(LIBNEWLIB_LIBC)/string/strspn.c
 LIBNEWLIBC_SRCS-y += $(LIBNEWLIB_LIBC)/string/strtok.c
 LIBNEWLIBC_SRCS-y += $(LIBNEWLIB_LIBC)/string/strtok_r.c
