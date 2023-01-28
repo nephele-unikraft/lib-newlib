@@ -63,6 +63,7 @@ int poll(struct pollfd _pfd[] __unused, nfds_t _nfds __unused,
 	return -1;
 }
 
+#if 0
 int select(int nfds, fd_set *readfds __unused, fd_set *writefds __unused,
 		fd_set *exceptfds __unused, struct timeval *timeout)
 {
@@ -78,6 +79,7 @@ int select(int nfds, fd_set *readfds __unused, fd_set *writefds __unused,
 	errno = ENOTSUP;
 	return -1;
 }
+#endif
 #endif /* !CONFIG_LWIP_SOCKET */
 
 int eventfd(unsigned int initval, int flags)

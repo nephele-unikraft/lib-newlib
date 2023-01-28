@@ -41,20 +41,26 @@
 
 #include <stdint.h>
 
+#ifndef __bswap16
 static inline uint16_t __bswap16(uint16_t __x)
 {
 	return __x<<8 | __x>>8;
 }
+#endif
 
+#ifndef __bswap32
 static inline uint32_t __bswap32(uint32_t __x)
 {
 	return __x>>24 | (__x>>8&0xff00) | (__x<<8&0xff0000) | __x<<24;
 }
+#endif
 
+#ifndef __bswap64
 static inline uint64_t __bswap64(uint64_t __x)
 {
 	return (__bswap32(__x)+0ULL)<<32 | __bswap32(__x>>32);
 }
+#endif
 
 #if __BYTE_ORDER == __LITTLE_ENDIAN
 #define htobe16(x) __bswap16(x)

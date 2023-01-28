@@ -68,7 +68,9 @@ void free(void *ptr)
 	return uk_free(uk_alloc_get_default(), ptr);
 }
 
+#if 0
 int mprotect(void *addr __unused, size_t len __unused, int prot __unused)
 {
 	return 0;
 }
+#endif

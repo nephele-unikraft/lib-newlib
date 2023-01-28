@@ -38,6 +38,8 @@
 
 #define getline  __getline
 
+#define __BUFSIZ__ CONFIG_LIBNEWLIBC_BUFSIZ
+
 #include_next <stdio.h>
 
 #endif

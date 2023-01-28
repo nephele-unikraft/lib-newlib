@@ -40,12 +40,16 @@
 
 unsigned int alarm(unsigned int seconds __unused)
 {
-	return 0;
+	WARN_STUBBED();
+	errno = ENOTSUP;
+	return -1;
 }
 
 int siginterrupt(int sig __unused, int flag __unused)
 {
-	return 0;
+	WARN_STUBBED();
+	errno = ENOTSUP;
+	return -1;
 }
 
 int sigaltstack(const stack_t *ss, stack_t *old_ss)
